@@ -25,7 +25,7 @@ export default function Catalog({ cambiar, cant }) {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 p-4">
           {lista.map((p) => (
-            <article key={p.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
+            <article key={p.id} className={`bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col ${cant[p.id] ? 'ring-2 ring-brand/40' : ''}`}>
               <div className="h-24 bg-slate-100 flex items-center justify-center text-5xl" aria-hidden>{p.e}</div>
               <div className="p-3 flex flex-col flex-1">
                 <p className="text-xs text-brand font-semibold">{p.c}</p>
