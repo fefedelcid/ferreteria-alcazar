@@ -69,7 +69,7 @@ export default function App() {
 
       <main className="flex-1">
         {tab === 'inicio' && <Home irA={ir} />}
-        {tab === 'catalogo' && <Catalog agregar={(id) => cambiar(id, 1)} cant={cant} />}
+        {tab === 'catalogo' && <Catalog cambiar={cambiar} cant={cant} />}
         {tab === 'presupuesto' && <Budget cant={cant} cambiar={cambiar} vaciar={() => setCant({})} irA={ir} />}
         {tab === 'info' && <Info />}
       </main>

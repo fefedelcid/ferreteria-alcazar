@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { CATEGORIAS, PRODUCTOS, peso } from '../data'
 
-export default function Catalog({ agregar, cant }) {
+export default function Catalog({ cambiar, cant }) {
   const [q, setQ] = useState('')
   const [cat, setCat] = useState('Todos')
   const lista = useMemo(() => PRODUCTOS.filter((p) =>
@@ -32,9 +32,20 @@ export default function Catalog({ agregar, cant }) {
                 <h3 className="font-semibold leading-snug mt-0.5 flex-1">{p.n}</h3>
                 <p className="mt-2 font-extrabold text-lg">{peso(p.p)}</p>
                 <p className="text-[11px] text-slate-400">Precio estimativo</p>
-                <button onClick={() => agregar(p.id)} className="mt-2 bg-ink text-white rounded-lg py-2 text-sm font-semibold active:scale-95 transition">
-                  {cant[p.id] ? `Agregado (${cant[p.id]}) · sumar otro` : 'Agregar al carrito'}
-                </button>
+                {cant[p.id] ? (
+                  <div className="mt-2 h-11 flex items-center justify-between bg-ink text-white rounded-lg p-1">
+                    <button aria-label="Quitar uno" onClick={() => cambiar(p.id, -1)}
+                      className="h-9 w-11 rounded-md text-xl font-bold transition hover:bg-white/10 active:scale-90">−</button>
+                    <span className="font-bold" aria-live="polite">{cant[p.id]}</span>
+                    <button aria-label="Sumar uno" onClick={() => cambiar(p.id, 1)}
+                      className="h-9 w-11 rounded-md bg-brand text-xl font-bold transition hover:brightness-110 active:scale-90">+</button>
+                  </div>
+                ) : (
+                  <button onClick={() => cambiar(p.id, 1)}
+                    className="mt-2 h-11 w-full bg-ink text-white rounded-lg text-sm font-semibold transition hover:bg-slate-700 active:scale-95">
+                    Agregar al carrito
+                  </button>
+                )}
               </div>
             </article>
           ))}
