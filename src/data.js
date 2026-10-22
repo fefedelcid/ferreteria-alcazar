@@ -54,9 +54,12 @@ export const PRODUCTOS = [
 ]
 export const peso = (n) => '$' + n.toLocaleString('es-AR')
 
-// ⚠️ RESEÑAS DE EJEMPLO: reemplazar por textos reales copiados de Google Maps (con permiso)
+// Opiniones de Google Maps (5 estrellas). Textos copiados sin modificar.
 export const RESENAS = [
-  { a: 'Cliente de Google Maps', t: 'Muy buena atención, te explican bien qué llevar para cada arreglo.', s: 5 },
-  { a: 'Cliente de Google Maps', t: 'Buenos precios y siempre tienen lo que busco.', s: 5 },
-  { a: 'Cliente de Google Maps', t: 'Atención amable y rápida. Los recomiendo.', s: 5 },
+  { a: 'Pilar E.', t: 'Ferretería súper completa! Precios acordes (no te cortan la cabeza como en otras). La variedad de productos que tienen es increíble. La atención excelente y siempre brindan buen asesoramiento.', s: 5 },
+  { a: 'Ale', t: 'Excelente atención. Reciben todo tipo de pagos, buenos precios, la atención telefónica es excelente también, te brindan los precios así te puedes organizar antes con la compra !', s: 5 },
+  { a: 'Natacha M.', t: 'Excelente atención, brindan asesoramiento preciso y los productos son de muy buena calidad.', s: 5 },
+  { a: 'Santiago M.', t: 'Buena atención, buenos precios. Buen horario', s: 5 },
+  { a: 'Edgar C.', t: 'Muy buena atención y tienen de todo', s: 5 },
+  { a: 'Elias A.', t: 'Muy buena atencion y muy completo en productos, 100% recomendada', s: 5 },
 ]
